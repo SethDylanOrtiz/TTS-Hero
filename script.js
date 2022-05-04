@@ -6,6 +6,42 @@ document.querySelector('#reset').addEventListener('click', () => {
     responsiveVoice.cancel();
 });
 
+document.querySelector('#STT').addEventListener('click', () => {
+    var speechRecognition = window.webkitSpeechRecognition;
+    var recognition = new speechRecognition(); // ctor
+    var spokenText  = ''
+
+    recognition.continuous = true;
+
+    recognition.onstart = function(){
+        document.getElementById("text-area").placeholder = "Voice Recognition is ON";
+    }
+
+    recognition.onspeechend = function(){
+        recognition.stop();
+        document.getElementById("text-area").placeholder = "Voice Recognition is OFF"; // or change to input value
+        // call function to correct input speech 
+    }
+
+    recognition.onerro = function(){
+        alert("ERROR USING SPEECH RECOGNITION (STT)");
+    }
+
+    recognition.onresult = function(event){
+        var spokenText = event.resultIndex;
+        var transcript = event.results[spokenText][0].transcript;
+
+        spokenText = transcript; // not using += because that gives 0 at beginning
+        document.getElementById("text-area").value = spokenText;
+        recognition.stop();
+    }
+
+    if(spokenText.length){ // resets text
+        spokenText = '';
+    }
+    recognition.start();
+} );
+
 document.querySelector('#TTS').addEventListener('click', async (e) => {
     e.preventDefault();
     var input = document.getElementById("text-area").value;

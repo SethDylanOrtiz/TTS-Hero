@@ -194,6 +194,16 @@ body {
     border: 10px solid #E95D0F;
 }
 
+#STT {
+    padding: .5em 1em;
+    font-size: 1.2em;
+    font-weight: bold;
+    float: right;
+    color: #E95D0F;
+    background: white ;
+    border: 10px solid #E95D0F;
+}
+
 #TTS:hover {
     color: white;
     background-color: #E95D0F;

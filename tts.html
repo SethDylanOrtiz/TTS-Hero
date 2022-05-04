@@ -14,9 +14,10 @@
         <header class="masthead">
             <h1>TTS Hero</h1>
         </header>
-        <main class="main">
+        <main class="main">     
             <article class="intro">
-                <p>Insert text into the box below, and it will be turned into speech!</p>
+                <p style = "text-align: center;">Insert text into the box below, and it will be turned into speech!</p>
+                <p style = "text-align: center;">Or press STT to active Speech to Text!</p>
             </article><!-- .intro -->
             <section class="text-area">
                 <div id="corrected-text">
@@ -29,6 +30,7 @@
 
                 <div class = "meta">
                     <button id = "reset">Reset</button>
+                    <button id = "STT">SST!</button>
                     <button id = "TTS">TTS!</button>
                 </div><!-- .meta -->
             </section><!-- .text-area -->
@@ -37,6 +39,7 @@
 
         <!--<script type = "text/javascript" src = "https://code.responsivevoice.org/responsivevoice.js"></script> -->
         <script src="https://code.responsivevoice.org/responsivevoice.js?key=OEY6rW8I"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!--STT JQuery cdn-->
         <script src = "script.js" charset="utf-8"></script>
         <!--<script src = "script.js" charset="utf-8"></script>-->
     </body>

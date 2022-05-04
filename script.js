@@ -15,11 +15,13 @@ document.querySelector('#STT').addEventListener('click', () => {
 
     recognition.onstart = function(){
         document.getElementById("text-area").placeholder = "Voice Recognition is ON";
+        document.getElementById('TTS').disabled = true; // disable TTS button
     }
 
     recognition.onspeechend = function(){
         recognition.stop();
         document.getElementById("text-area").placeholder = "Voice Recognition is OFF"; // or change to input value
+        document.getElementById('TTS').disabled = false; //re-enable TTS button
         // call function to correct input speech 
     }
 
@@ -43,6 +45,8 @@ document.querySelector('#STT').addEventListener('click', () => {
 } );
 
 document.querySelector('#TTS').addEventListener('click', async (e) => {
+    document.getElementById('STT').disabled = true;
+
     e.preventDefault();
     var input = document.getElementById("text-area").value;
 
@@ -83,5 +87,6 @@ document.querySelector('#TTS').addEventListener('click', async (e) => {
         document.getElementById('TTS').disabled = true; // disable button, do we need this?
         responsiveVoice.speak(input, "UK English Male");
     }
-    document.getElementById('TTS').disabled = false; //re-enable TTS button
+    document.getElementById('TTS').disabled = false;
+    document.getElementById('STT').disabled = false; 
 });

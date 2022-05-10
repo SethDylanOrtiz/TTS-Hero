@@ -6,3 +6,7 @@ Our text-to speech (TTS) function will help those that have visual and reading i
 <br>Convert spoken audio to text within your apps for more accessible converted audio to text interactions with Azure Speech to Text.
 
 <br>The app will have the ability to add punctuation, fix syntax where needed.
+
+<hr>
+
+To use, clone repo and open html file under your file explorer
